@@ -1,6 +1,6 @@
-
 import { useEffect, useRef } from "react";
 import { ArrowDownCircle } from "lucide-react";
+import * as THREE from "three";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -21,9 +21,8 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     
     // Initialize Three.js
-    const initThreeJS = async () => {
+    const initThreeJS = () => {
       try {
-        const THREE = await import('three');
         const canvas = document.createElement('canvas');
         const container = document.getElementById('canvas-container');
         
