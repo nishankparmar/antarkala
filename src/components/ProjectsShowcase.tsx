@@ -163,7 +163,8 @@ const ProjectsShowcase = () => {
         </div>
       </div>
 
-      <style jsx global>{`
+      <style>
+        {`
         .project-card {
           transform: translateY(30px);
           opacity: 0;
@@ -174,7 +175,8 @@ const ProjectsShowcase = () => {
           transform: translateY(0);
           opacity: 1;
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
