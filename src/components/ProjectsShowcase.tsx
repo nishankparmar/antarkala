@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 type Project = {
   id: number;
@@ -13,45 +14,52 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Modern Minimalist Apartment",
-    category: "residential",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1000",
-    description: "A clean, minimalist design for an urban apartment focused on functionality and subtle elegance."
+    title: "Contemporary Living Room",
+    category: "living",
+    image: "public/lovable-uploads/bb37b4cb-7989-46e2-845b-a990acd1422a.png",
+    description: "A modern living space with warm tones, featuring copper accent wall and elegant lighting solutions."
   },
   {
     id: 2,
-    title: "Luxury Restaurant Redesign",
-    category: "commercial",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1000",
-    description: "An upscale dining experience with custom furniture and warm, inviting atmosphere."
+    title: "Botanical Bedroom Retreat",
+    category: "bedroom",
+    image: "public/lovable-uploads/d5dc84d4-4ec7-41c5-8f6e-39a81aca674f.png",
+    description: "Serene bedroom with botanical wall art, natural wood elements, and soft neutral palette."
   },
   {
     id: 3,
-    title: "Contemporary Home Office",
-    category: "residential",
-    image: "https://images.unsplash.com/photo-1486946255434-2466348c2166?auto=format&fit=crop&q=80&w=1000",
-    description: "A productivity-focused home office with ergonomic design and natural light optimization."
+    title: "Luxury Living Area",
+    category: "living",
+    image: "public/lovable-uploads/def7cb12-b77b-4fc9-8a8b-dd7de26a2564.png",
+    description: "Spacious living room featuring elegant lighting fixtures, custom paneling, and sophisticated furniture arrangement."
   },
   {
     id: 4,
-    title: "Boutique Hotel Lobby",
-    category: "commercial",
-    image: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&q=80&w=1000",
-    description: "A welcoming hotel lobby blending local cultural elements with luxury comfort."
+    title: "Statement Wall Bedroom",
+    category: "bedroom",
+    image: "public/lovable-uploads/c0b6b482-8dba-441d-a79a-099db666b8fd.png",
+    description: "Bold bedroom design with textured accent wall, integrated lighting, and vibrant color accents."
   },
   {
     id: 5,
-    title: "Scandinavian Villa Renovation",
-    category: "residential",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000",
-    description: "Complete renovation of a villa using Scandinavian design principles and natural materials."
+    title: "Minimalist Kitchen Design",
+    category: "kitchen",
+    image: "public/lovable-uploads/b8b26ba0-53d3-4f59-9a02-8eb606fcef90.png",
+    description: "Clean L-shaped kitchen with contrasting cabinetry, seamless design, and optimal functionality."
   },
   {
     id: 6,
-    title: "Urban Café Design",
-    category: "commercial",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1000", 
-    description: "A trendy café space designed to create a unique social experience with custom lighting solutions."
+    title: "Tranquil Living Space",
+    category: "living",
+    image: "public/lovable-uploads/c149b14b-94eb-4e64-a79a-9448cf25d1e1.png",
+    description: "Zen-inspired living room with artistic wall panels, Buddha sculpture, and natural wood elements."
+  },
+  {
+    id: 7,
+    title: "Zen Bedroom Sanctuary",
+    category: "bedroom",
+    image: "public/lovable-uploads/2105fd5d-3b61-4196-b424-46ccc5d54028.png",
+    description: "Peaceful bedroom with indirect lighting, textured wall panels, and minimalist tea service detail."
   }
 ];
 
@@ -91,7 +99,7 @@ const ProjectsShowcase = () => {
   }, [animationElements]);
 
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-accent uppercase tracking-widest mb-2 reveal">Our Portfolio</p>
@@ -102,42 +110,47 @@ const ProjectsShowcase = () => {
             Explore our collection of meticulously crafted spaces that showcase our commitment to innovative design and exceptional quality.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-12 reveal reveal-delay-3">
-            {["all", "residential", "commercial"].map((category) => (
-              <button
-                key={category}
-                onClick={() => handleFilterChange(category)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  filter === category
-                    ? "bg-primary text-white"
-                    : "bg-secondary hover:bg-secondary-dark text-primary"
-                }`}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
-          </div>
+          <Tabs defaultValue="all" className="w-full max-w-3xl mx-auto">
+            <TabsList className="grid grid-cols-4 mb-12 reveal reveal-delay-3 bg-secondary/20">
+              {["all", "living", "bedroom", "kitchen"].map((category) => (
+                <TabsTrigger 
+                  key={category} 
+                  value={category}
+                  onClick={() => handleFilterChange(category)}
+                  className="text-sm md:text-base capitalize"
+                >
+                  {category === "all" ? "All Projects" : category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className={`project-card rounded-lg overflow-hidden shadow-lg reveal`}
+              className="project-card rounded-lg overflow-hidden shadow-lg reveal"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-80 object-cover transition-transform duration-700"
-                loading="lazy"
-              />
-              <div className="project-overlay text-white">
-                <h3 className="text-xl font-playfair font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm mb-4 text-white/80">{project.description}</p>
-                <a href="#" className="inline-flex items-center text-accent hover:text-accent-light">
-                  View Project <ArrowUpRight size={18} className="ml-1" />
-                </a>
+              <div className="relative group h-80">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
+                  <h3 className="text-xl font-playfair font-semibold mb-2">{project.title}</h3>
+                  <p className="text-sm mb-4 text-white/90 text-center">{project.description}</p>
+                  <a href="#" className="inline-flex items-center text-accent hover:text-accent-light mt-2">
+                    View Project <ArrowUpRight size={18} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <div className="p-4 bg-white">
+                <h3 className="text-lg font-playfair font-semibold">{project.title}</h3>
+                <p className="text-sm text-gray-500 capitalize">{project.category}</p>
               </div>
             </div>
           ))}
@@ -149,6 +162,19 @@ const ProjectsShowcase = () => {
           </button>
         </div>
       </div>
+
+      <style jsx global>{`
+        .project-card {
+          transform: translateY(30px);
+          opacity: 0;
+          transition: all 0.6s ease-out;
+        }
+        
+        .project-card.active {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      `}</style>
     </section>
   );
 };
