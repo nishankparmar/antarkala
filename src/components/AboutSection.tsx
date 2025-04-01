@@ -1,5 +1,4 @@
-
-import { users, award, history, lightbulb } from "lucide-react";
+import { Users, Award, History, Lightbulb } from "lucide-react";
 
 const teamMembers = [
   {
@@ -57,28 +56,28 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm reveal reveal-delay-1">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
-                  <lightbulb className="text-accent" size={24} />
+                  <Lightbulb className="text-accent" size={24} />
                 </div>
                 <h4 className="font-playfair font-medium">Innovation</h4>
               </div>
               
               <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm reveal reveal-delay-2">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
-                  <history className="text-accent" size={24} />
+                  <History className="text-accent" size={24} />
                 </div>
                 <h4 className="font-playfair font-medium">Experience</h4>
               </div>
               
               <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm reveal reveal-delay-3">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
-                  <users className="text-accent" size={24} />
+                  <Users className="text-accent" size={24} />
                 </div>
                 <h4 className="font-playfair font-medium">Collaboration</h4>
               </div>
               
               <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm reveal reveal-delay-4">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
-                  <award className="text-accent" size={24} />
+                  <Award className="text-accent" size={24} />
                 </div>
                 <h4 className="font-playfair font-medium">Quality</h4>
               </div>

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
 const ContactSection = () => {
