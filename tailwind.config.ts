@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],
 				'raleway': ['Raleway', 'sans-serif'],
+				'cinzel': ['Cinzel', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

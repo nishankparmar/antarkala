@@ -101,7 +101,7 @@ const Hero = () => {
         ref={textRef} 
         className="container mx-auto px-4 text-center z-10"
       >
-        <h1 className="text-accent uppercase tracking-widest mb-0 font-bold text-4xl md:text-6xl lg:text-7xl font-playfair text-outline transform hover:scale-105 transition-transform duration-300 animate-fade-in">
+        <h1 className="text-transparent bg-gradient-to-r from-accent to-accent-light bg-clip-text uppercase tracking-wider mb-2 font-bold text-5xl md:text-7xl lg:text-8xl font-playfair drop-shadow-lg hover:scale-105 transition-transform duration-300 animate-fade-in">
           Antar Kala
         </h1>
         <p className="text-white/90 uppercase tracking-widest mb-4 text-sm animate-fade-in" style={{ animationDelay: "0.1s" }}>
