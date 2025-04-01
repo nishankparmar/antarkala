@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { ArrowDownCircle } from "lucide-react";
 import * as THREE from "three";
@@ -100,12 +101,15 @@ const Hero = () => {
         ref={textRef} 
         className="container mx-auto px-4 text-center z-10"
       >
-        <p className="text-accent uppercase tracking-widest mb-2 opacity-80 animate-fade-in">
+        <h1 className="text-accent uppercase tracking-widest mb-0 font-bold text-2xl md:text-3xl animate-fade-in">
+          Antar Kala
+        </h1>
+        <p className="text-white/90 uppercase tracking-widest mb-4 text-sm animate-fade-in" style={{ animationDelay: "0.1s" }}>
           Interior Design Studio
         </p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
           Crafting Spaces<br />That Inspire Life
-        </h1>
+        </h2>
         <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           We transform spaces into beautiful, functional environments that reflect your unique style and enhance your quality of life.
         </p>
