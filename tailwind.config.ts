@@ -31,16 +31,16 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#2C3E50',
-					light: '#34495E',
+					DEFAULT: '#1A2D3F',  // Deeper blue
+					light: '#2A405A',    // Lighter blue
 				},
 				secondary: {
-					DEFAULT: '#E9E9E9',
-					dark: '#D4D4D4',
+					DEFAULT: '#F5F5F5',  // Lighter gray
+					dark: '#E0E0E0',     // Darker gray
 				},
 				accent: {
-					DEFAULT: '#D4AF37',
-					light: '#F1D78C',
+					DEFAULT: '#C09456',  // Richer gold
+					light: '#DFC08C',    // Lighter gold
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',

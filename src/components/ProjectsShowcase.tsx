@@ -104,7 +104,7 @@ const ProjectsShowcase = () => {
   }, [animationElements]);
 
   return (
-    <section id="projects" className="section-padding bg-white py-20">
+    <section id="projects" className="section-padding bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-accent uppercase tracking-widest mb-2 reveal">Our Portfolio</p>
@@ -116,7 +116,7 @@ const ProjectsShowcase = () => {
           </p>
           
           <Tabs defaultValue="all" className="w-full max-w-3xl mx-auto">
-            <TabsList className="grid grid-cols-4 mb-12 reveal reveal-delay-3 bg-secondary/20">
+            <TabsList className="grid grid-cols-4 mb-12 reveal reveal-delay-3 bg-white/50 shadow-sm">
               {["all", "living", "bedroom", "kitchen"].map((category) => (
                 <TabsTrigger 
                   key={category} 
@@ -135,10 +135,10 @@ const ProjectsShowcase = () => {
           {filteredProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className="project-card rounded-lg overflow-hidden shadow-lg reveal"
+              className="project-card overflow-hidden shadow-lg reveal group"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
-              <div className="relative group h-80">
+              <div className="relative h-80">
                 <img 
                   src={project.image} 
                   alt={project.title} 
@@ -152,13 +152,14 @@ const ProjectsShowcase = () => {
                 <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
                   <h3 className="text-xl font-playfair font-semibold mb-2">{project.title}</h3>
                   <p className="text-sm mb-4 text-white/90 text-center">{project.description}</p>
-                  <a href="#" className="inline-flex items-center text-accent hover:text-accent-light mt-2">
-                    View Project <ArrowUpRight size={18} className="ml-1" />
+                  <a href="#" className="inline-flex items-center text-accent-light hover:text-accent mt-2 group">
+                    View Project 
+                    <ArrowUpRight size={18} className="ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </a>
                 </div>
               </div>
-              <div className="p-4 bg-white">
-                <h3 className="text-lg font-playfair font-semibold">{project.title}</h3>
+              <div className="p-5 bg-white">
+                <h3 className="text-lg font-playfair font-semibold text-primary">{project.title}</h3>
                 <p className="text-sm text-gray-500 capitalize">{project.category}</p>
               </div>
             </div>
@@ -166,8 +167,8 @@ const ProjectsShowcase = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium px-8 py-3 rounded transition-all duration-300">
-            View All Projects
+          <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-accent px-8 py-3 font-medium text-accent transition-all duration-300 hover:bg-accent hover:text-white">
+            <span className="relative">View All Projects</span>
           </button>
         </div>
       </div>

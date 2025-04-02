@@ -9,21 +9,24 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="text-xl font-playfair font-semibold mb-6">Antar Kala</h3>
+            <h3 className="text-xl font-cinzel font-semibold mb-6">
+              <span className="text-white">Antar</span>
+              <span className="text-accent-light"> Kala</span>
+            </h3>
             <p className="text-white/70 mb-6">
               Creating beautiful, functional spaces that enhance the way people live, work, and play.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/20 transition-colors duration-300">
+              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/30 transition-colors duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/20 transition-colors duration-300">
+              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/30 transition-colors duration-300">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/20 transition-colors duration-300">
+              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/30 transition-colors duration-300">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/20 transition-colors duration-300">
+              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-accent/30 transition-colors duration-300">
                 <Twitter size={18} />
               </a>
             </div>
@@ -36,9 +39,9 @@ const Footer = () => {
                 <li key={item}>
                   <a 
                     href={`#${item.toLowerCase()}`}
-                    className="text-white/70 hover:text-accent transition-colors duration-300"
+                    className="text-white/70 hover:text-accent-light transition-colors duration-300 flex items-center"
                   >
-                    {item}
+                    <span className="text-accent mr-2">›</span> {item}
                   </a>
                 </li>
               ))}
@@ -52,9 +55,9 @@ const Footer = () => {
                 <li key={item}>
                   <a 
                     href="#services"
-                    className="text-white/70 hover:text-accent transition-colors duration-300"
+                    className="text-white/70 hover:text-accent-light transition-colors duration-300 flex items-center"
                   >
-                    {item}
+                    <span className="text-accent mr-2">›</span> {item}
                   </a>
                 </li>
               ))}
@@ -67,13 +70,13 @@ const Footer = () => {
               Subscribe to our newsletter for design inspiration and updates.
             </p>
             <form className="mb-4">
-              <div className="flex">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="flex-grow px-4 py-2 bg-white/10 rounded-l-lg focus:outline-none focus:bg-white/20"
+                  className="flex-grow px-4 py-3 bg-white/10 rounded-md focus:outline-none focus:bg-white/20 transition-colors"
                 />
-                <button className="bg-accent hover:bg-accent-light text-primary px-4 py-2 rounded-r-lg transition-colors duration-300">
+                <button className="bg-accent hover:bg-accent-light text-white px-4 py-3 rounded-md transition-colors duration-300 shadow-lg">
                   Subscribe
                 </button>
               </div>

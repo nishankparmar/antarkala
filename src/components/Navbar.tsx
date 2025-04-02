@@ -23,15 +23,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-md py-3"
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-playfair font-semibold text-primary">
-          Antar Kala
+      <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
+        <a href="#" className="text-2xl font-cinzel font-semibold text-primary group">
+          <span className={`transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>Antar</span>
+          <span className={`transition-colors duration-300 ${isScrolled ? 'text-accent' : 'text-accent-light'}`}> Kala</span>
         </a>
 
         {/* Desktop Menu */}
@@ -40,7 +41,11 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-primary hover:text-accent transition-colors duration-300"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled 
+                  ? "text-primary hover:text-accent" 
+                  : "text-white/90 hover:text-accent-light"
+              }`}
             >
               {item}
             </a>
@@ -49,7 +54,9 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-primary hover:text-accent transition-colors"
+          className={`md:hidden transition-colors ${
+            isScrolled ? "text-primary hover:text-accent" : "text-white hover:text-accent-light"
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -58,7 +65,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-primary z-40 flex flex-col items-center justify-center transition-all duration-300 ${
+        className={`fixed inset-0 bg-primary z-40 flex flex-col items-center justify-center transition-all duration-500 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -67,7 +74,7 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-white hover:text-accent text-2xl font-playfair transition-colors duration-300"
+              className="text-white/90 hover:text-accent-light text-2xl font-cinzel transition-colors duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               {item}

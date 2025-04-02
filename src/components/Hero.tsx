@@ -39,15 +39,17 @@ const Hero = () => {
           renderer.setSize(window.innerWidth, window.innerHeight);
           renderer.setPixelRatio(window.devicePixelRatio);
           
-          // Create a simple geometric shape
-          const geometry = new THREE.IcosahedronGeometry(2, 0);
+          // Create a more elegant geometric shape
+          const geometry = new THREE.OctahedronGeometry(2, 1);
           const material = new THREE.MeshBasicMaterial({ 
-            color: 0xD4AF37,
-            wireframe: true
+            color: 0xC09456,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.6
           });
           
-          const icosahedron = new THREE.Mesh(geometry, material);
-          scene.add(icosahedron);
+          const octa = new THREE.Mesh(geometry, material);
+          scene.add(octa);
           
           camera.position.z = 5;
           
@@ -55,8 +57,8 @@ const Hero = () => {
           const animate = () => {
             requestAnimationFrame(animate);
             
-            icosahedron.rotation.x += 0.0015;
-            icosahedron.rotation.y += 0.0025;
+            octa.rotation.x += 0.001;
+            octa.rotation.y += 0.002;
             
             renderer.render(scene, camera);
           };
@@ -93,7 +95,7 @@ const Hero = () => {
     <div 
       id="home" 
       ref={heroRef} 
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-primary"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-primary/90"
     >
       <div id="canvas-container"></div>
       
@@ -101,24 +103,26 @@ const Hero = () => {
         ref={textRef} 
         className="container mx-auto px-4 text-center z-10"
       >
-        <h1 className="text-transparent bg-gradient-to-r from-accent to-accent-light bg-clip-text uppercase tracking-wider mb-2 font-bold text-5xl md:text-7xl lg:text-8xl font-playfair drop-shadow-lg hover:scale-105 transition-transform duration-300 animate-fade-in">
-          Antar Kala
-        </h1>
-        <p className="text-white/90 uppercase tracking-widest mb-4 text-sm animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        <p className="text-accent-light uppercase tracking-widest mb-4 text-sm animate-fade-in">
           Interior Design Studio
         </p>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-cinzel font-bold text-white mb-4 leading-tight tracking-wide animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          Antar Kala
+        </h1>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white/90 mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
           Crafting Spaces<br />That Inspire Life
         </h2>
-        <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+        <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           We transform spaces into beautiful, functional environments that reflect your unique style and enhance your quality of life.
         </p>
-        <button 
-          className="bg-accent hover:bg-accent-light text-primary font-medium px-8 py-3 rounded transition-all duration-300 animate-fade-in" 
-          style={{ animationDelay: "0.6s" }}
-        >
-          Book a Consultation
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <button className="bg-accent hover:bg-accent-light text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+            Book a Consultation
+          </button>
+          <button className="border-2 border-white/30 text-white hover:bg-white/10 font-medium px-8 py-3 rounded-full transition-all duration-300">
+            Explore Projects
+          </button>
+        </div>
       </div>
       
       <a 

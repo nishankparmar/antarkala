@@ -7,65 +7,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 33% 98%;
+    --foreground: 220 39% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 39% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 39% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 215 41% 18%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 14% 97%;
+    --secondary-foreground: 220 39% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 14% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 38% 54%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 32% 88%;
+    --input: 215 32% 88%;
+    --ring: 215 32% 60%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 39% 11%;
+    --foreground: 210 33% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 39% 11%;
+    --card-foreground: 210 33% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 39% 11%;
+    --popover-foreground: 210 33% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 33% 98%;
+    --primary-foreground: 220 39% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 33% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 35 38% 54%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 33% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 27% 84%;
   }
 }
 
@@ -84,13 +84,13 @@
 }
 
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-20 md:py-28;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .reveal.active {
@@ -115,7 +115,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #D4AF37;
+  background-color: #C09456;
   mix-blend-mode: difference;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -124,7 +124,7 @@
 }
 
 .text-outline {
-  -webkit-text-stroke: 1px #D4AF37;
+  -webkit-text-stroke: 1px #C09456;
   color: transparent;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -133,6 +133,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
 }
 
 .project-card:hover .project-overlay {
@@ -149,9 +150,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(44, 62, 80, 0.7);
+  background-color: rgba(26, 45, 63, 0.85);
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,11 +162,13 @@
 
 .service-card {
   transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 #canvas-container {
