@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -66,6 +67,11 @@ const ProjectsShowcase = () => {
   const [filter, setFilter] = useState<string>("all");
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   const [animationElements, setAnimationElements] = useState<Element[]>([]);
+
+  // Log image paths for debugging
+  useEffect(() => {
+    console.log("Image paths:", projects.map(p => p.image));
+  }, []);
 
   const handleFilterChange = (category: string) => {
     setFilter(category);
@@ -138,6 +144,10 @@ const ProjectsShowcase = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${project.image}`);
+                    e.currentTarget.src = "/placeholder.svg"; // Fallback to placeholder image
+                  }}
                 />
                 <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
                   <h3 className="text-xl font-playfair font-semibold mb-2">{project.title}</h3>
