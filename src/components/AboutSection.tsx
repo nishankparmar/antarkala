@@ -1,25 +1,7 @@
-import { Users, Award, History, Lightbulb } from "lucide-react";
 
-const teamMembers = [
-  {
-    name: "Priya Sharma",
-    role: "Principal Designer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-    bio: "With over 15 years of experience in luxury residential design, Priya brings a wealth of knowledge and creativity to each project."
-  },
-  {
-    name: "Rahul Kapoor",
-    role: "Architectural Specialist",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
-    bio: "Rahul specializes in merging architectural elements with interior design to create cohesive, functional spaces."
-  },
-  {
-    name: "Anjali Patel",
-    role: "Design Consultant",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400", 
-    bio: "Anjali's background in fine arts and sustainable design brings a unique perspective to the team's creative process."
-  }
-];
+import { Users, Award, History, Lightbulb } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const AboutSection = () => {
   return (
@@ -89,21 +71,38 @@ const AboutSection = () => {
           Meet Our Team
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {teamMembers.map((member, index) => (
-            <div key={member.name} className="rounded-lg overflow-hidden bg-white shadow-lg reveal" style={{ animationDelay: `${0.2 * index}s` }}>
-              <img 
-                src={member.image} 
-                alt={member.name} 
-                className="w-full h-64 object-cover object-top"
-              />
-              <div className="p-6">
-                <h4 className="text-xl font-playfair font-semibold mb-1">{member.name}</h4>
-                <p className="text-accent mb-4">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
+        <div className="max-w-2xl mx-auto mb-16">
+          <Card className="overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 reveal">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/3">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" 
+                  alt="Sailee Satve" 
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
+              <CardContent className="md:w-2/3 p-8">
+                <div className="flex items-center mb-4">
+                  <Avatar className="h-14 w-14 border-2 border-accent">
+                    <AvatarImage src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" alt="Sailee Satve" />
+                    <AvatarFallback>SS</AvatarFallback>
+                  </Avatar>
+                  <div className="ml-4">
+                    <h4 className="text-2xl font-playfair font-semibold mb-1">Sailee Satve</h4>
+                    <p className="text-accent font-medium">Principal Designer & Founder</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  With over 15 years of experience in luxury residential and commercial design, Sailee brings a wealth of knowledge, creativity, and passion to each project. Her unique vision and attention to detail have established Antar Kala as a premier design studio.
+                </p>
+                <div className="flex gap-4">
+                  <span className="text-sm font-medium bg-secondary px-3 py-1 rounded-full">Residential</span>
+                  <span className="text-sm font-medium bg-secondary px-3 py-1 rounded-full">Commercial</span>
+                  <span className="text-sm font-medium bg-secondary px-3 py-1 rounded-full">Sustainable Design</span>
+                </div>
+              </CardContent>
             </div>
-          ))}
+          </Card>
         </div>
         
         <div className="text-center mt-8 reveal">

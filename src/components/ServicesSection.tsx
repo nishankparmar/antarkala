@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Heart, Home, Building2, PenTool, Palette, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,13 +8,13 @@ const services = [
     icon: <Home size={32} />,
     title: "Residential Design",
     description: "Comprehensive interior design solutions for homes, apartments, and private residences.",
-    pricing: "Starting at $2,500"
+    pricing: "Starting at ₹2,500"
   },
   {
     icon: <Building2 size={32} />,
     title: "Commercial Design",
     description: "Strategic design for offices, retail spaces, restaurants, and hospitality environments.",
-    pricing: "Starting at $5,000"
+    pricing: "Starting at ₹5,000"
   },
   {
     icon: <PenTool size={32} />,
@@ -25,13 +26,13 @@ const services = [
     icon: <Palette size={32} />,
     title: "Color Consultation",
     description: "Expert color scheme development to enhance mood, function, and aesthetic appeal.",
-    pricing: "Starting at $500"
+    pricing: "Starting at ₹500"
   },
   {
     icon: <Heart size={32} />,
     title: "Space Planning",
     description: "Optimizing layout and flow for maximum functionality and comfort.",
-    pricing: "Starting at $1,200"
+    pricing: "Starting at ₹1,200"
   },
   {
     icon: <ArrowRight size={32} />,
