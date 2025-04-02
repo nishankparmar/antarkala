@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router-dom";
 
 type Project = {
   id: number;
@@ -167,9 +167,12 @@ const ProjectsShowcase = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-accent px-8 py-3 font-medium text-accent transition-all duration-300 hover:bg-accent hover:text-white">
+          <Link 
+            to="/projects" 
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-accent px-8 py-3 font-medium text-accent transition-all duration-300 hover:bg-accent hover:text-white"
+          >
             <span className="relative">View All Projects</span>
-          </button>
+          </Link>
         </div>
       </div>
 

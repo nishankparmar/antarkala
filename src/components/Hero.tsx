@@ -1,7 +1,8 @@
-
-import { useEffect, useRef } from "react";
+import React from 'react';
 import { ArrowDownCircle } from "lucide-react";
 import * as THREE from "three";
+import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -116,12 +117,18 @@ const Hero = () => {
           We transform spaces into beautiful, functional environments that reflect your unique style and enhance your quality of life.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <button className="bg-accent hover:bg-accent-light text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+          <Link 
+            to="/consultation" 
+            className="bg-accent hover:bg-accent-light text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
             Book a Consultation
-          </button>
-          <button className="border-2 border-white/30 text-white hover:bg-white/10 font-medium px-8 py-3 rounded-full transition-all duration-300">
+          </Link>
+          <Link 
+            to="/projects" 
+            className="border-2 border-white/30 text-white hover:bg-white/10 font-medium px-8 py-3 rounded-full transition-all duration-300"
+          >
             Explore Projects
-          </button>
+          </Link>
         </div>
       </div>
       

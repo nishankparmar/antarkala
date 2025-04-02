@@ -1,5 +1,6 @@
-
+import React from 'react';
 import { Heart, Home, Building2, PenTool, Palette, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -129,9 +130,12 @@ const ServicesSection = () => {
           <h3 className="text-2xl font-playfair font-semibold mb-8">
             Ready to Transform Your Space?
           </h3>
-          <button className="bg-accent hover:bg-accent-light text-primary font-medium px-8 py-3 rounded transition-all duration-300">
+          <Link 
+            to="/consultation" 
+            className="bg-accent hover:bg-accent-light text-primary font-medium px-8 py-3 rounded transition-all duration-300"
+          >
             Schedule a Consultation
-          </button>
+          </Link>
         </div>
       </div>
     </section>
