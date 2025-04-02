@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -16,49 +15,49 @@ const projects: Project[] = [
     id: 1,
     title: "Contemporary Living Room",
     category: "living",
-    image: "public/lovable-uploads/bb37b4cb-7989-46e2-845b-a990acd1422a.png",
+    image: "/lovable-uploads/bb37b4cb-7989-46e2-845b-a990acd1422a.png",
     description: "A modern living space with warm tones, featuring copper accent wall and elegant lighting solutions."
   },
   {
     id: 2,
     title: "Botanical Bedroom Retreat",
     category: "bedroom",
-    image: "public/lovable-uploads/d5dc84d4-4ec7-41c5-8f6e-39a81aca674f.png",
+    image: "/lovable-uploads/d5dc84d4-4ec7-41c5-8f6e-39a81aca674f.png",
     description: "Serene bedroom with botanical wall art, natural wood elements, and soft neutral palette."
   },
   {
     id: 3,
     title: "Luxury Living Area",
     category: "living",
-    image: "public/lovable-uploads/def7cb12-b77b-4fc9-8a8b-dd7de26a2564.png",
+    image: "/lovable-uploads/def7cb12-b77b-4fc9-8a8b-dd7de26a2564.png",
     description: "Spacious living room featuring elegant lighting fixtures, custom paneling, and sophisticated furniture arrangement."
   },
   {
     id: 4,
     title: "Statement Wall Bedroom",
     category: "bedroom",
-    image: "public/lovable-uploads/c0b6b482-8dba-441d-a79a-099db666b8fd.png",
+    image: "/lovable-uploads/c0b6b482-8dba-441d-a79a-099db666b8fd.png",
     description: "Bold bedroom design with textured accent wall, integrated lighting, and vibrant color accents."
   },
   {
     id: 5,
     title: "Minimalist Kitchen Design",
     category: "kitchen",
-    image: "public/lovable-uploads/b8b26ba0-53d3-4f59-9a02-8eb606fcef90.png",
+    image: "/lovable-uploads/b8b26ba0-53d3-4f59-9a02-8eb606fcef90.png",
     description: "Clean L-shaped kitchen with contrasting cabinetry, seamless design, and optimal functionality."
   },
   {
     id: 6,
     title: "Tranquil Living Space",
     category: "living",
-    image: "public/lovable-uploads/c149b14b-94eb-4e64-a79a-9448cf25d1e1.png",
+    image: "/lovable-uploads/c149b14b-94eb-4e64-a79a-9448cf25d1e1.png",
     description: "Zen-inspired living room with artistic wall panels, Buddha sculpture, and natural wood elements."
   },
   {
     id: 7,
     title: "Zen Bedroom Sanctuary",
     category: "bedroom",
-    image: "public/lovable-uploads/2105fd5d-3b61-4196-b424-46ccc5d54028.png",
+    image: "/lovable-uploads/2105fd5d-3b61-4196-b424-46ccc5d54028.png",
     description: "Peaceful bedroom with indirect lighting, textured wall panels, and minimalist tea service detail."
   }
 ];
